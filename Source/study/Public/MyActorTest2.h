@@ -4,23 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MyActorTest.generated.h"
+#include "MyActorTest2.generated.h"
 
 UCLASS()
-class STUDY_API AMyActorTest : public AActor
+class STUDY_API AMyActorTest2 : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AMyActorTest();
-
-	UPROPERTY(EditAnywhere, Category = "Brush")
-	UBrushComponent* Brush;
-
-	UPROPERTY(EditAnywhere, Category = "Setup")
-	UStaticMeshComponent* Mesh;
-
+	AMyActorTest2();
 
 protected:
 	// Called when the game starts or when spawned
