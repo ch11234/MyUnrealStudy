@@ -2,7 +2,6 @@
 
 
 #include "MyActor.h"
-#include "Components/StaticMeshComponent.h"
 
 // Sets default values for this component's properties
 UMyActor::UMyActor()
@@ -11,7 +10,8 @@ UMyActor::UMyActor()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
+	
+
 }
 
 
@@ -19,7 +19,8 @@ UMyActor::UMyActor()
 void UMyActor::BeginPlay()
 {
 	Super::BeginPlay();
-
+	UE_LOG(LogTemp, Log, TEXT("Start"));
+	
 	// ...
 	
 }
@@ -29,7 +30,11 @@ void UMyActor::BeginPlay()
 void UMyActor::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	UE_LOG(LogTemp, Log, TEXT("Start"));
 
 	// ...
 }
 
+void UMyActor::OnOverlapBegin(AActor* actor, AActor* other)
+{
+}

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+#include "GameFramework/Actor.h"
 #include "MyActor.generated.h"
 
 
@@ -15,11 +15,16 @@ class STUDY_API UMyActor : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UMyActor();
-	UStaticMeshComponent* Mesh;
+	UPROPERTY(EditAnywhere, Category = "Setup")
+	UBrushComponent* Brush;
+
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void OnOverlapBegin(AActor* actor, AActor* other);
 
 public:	
 	// Called every frame

@@ -14,10 +14,17 @@ class STUDY_API AMyActorTest2 : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AMyActorTest2();
+	UPROPERTY(EditAnywhere, Category = "Setup")
+	UBrushComponent* Brush;
+
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void OnOverlapBegin(AActor* Actor, AActor* Other);
+
 
 public:	
 	// Called every frame
